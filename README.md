@@ -10,4 +10,3 @@ some text _about_ **things**
 
 this is how...
 
-![image]({{site.baseurl}}/images/9.png)
