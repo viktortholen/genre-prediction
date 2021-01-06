@@ -1,9 +1,3 @@
----
-layout: post
-title: You're up and running!
-published: true
----
-
 ## Hello world!
 
 some text _about_ **things**
@@ -15,5 +9,3 @@ some text _about_ **things**
 ## you can do this too!
 
 this is how...
-
-![image]({{site.baseurl}}/images/9.png)
