@@ -12,5 +12,5 @@ this is how...
 
 hello again
 
-![Word Cloud](/images/wordcloud.png)
+![Word Cloud](/images/wordcloud.png){: .center-image}
 
