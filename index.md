@@ -9,3 +9,8 @@ some text _about_ **things**
 ## you can do this too!
 
 this is how...
+
+hello again
+
+![Word Cloud](/images/wordcloud.png)
+
