@@ -10,3 +10,5 @@ some text _about_ **things**
 
 this is how...
 
+
+![Word Cloud](/images/wordcloud.png)
