@@ -12,9 +12,9 @@ this is how...
 
 hello again
 
-![Word Cloud](/images/wordcloud_without_pre.png){: .center-image_b}
+![Word Cloud](/images/wordcloud_without_pre.png){: .center-image}
 
-![Word Cloud](/images/wordcloud.png){: .center-image_b}
+![Word Cloud](/images/wordcloud.png){: .center-image}
 
 ![Word Cloud](/images/genres_graph.png){: .center-image}
 
