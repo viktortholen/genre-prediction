@@ -16,7 +16,7 @@ hello again
 
 ![Word Cloud](/images/wordcloud.png){: .center-image_b}
 
-![Word Cloud](/images/Genres.png){: .center-image}
+![Word Cloud](/images/genres_graph.png){: .center-image}
 
 ![Word Cloud](/images/logisticreg.png){: .center-image_b}
 
