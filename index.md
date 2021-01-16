@@ -32,7 +32,7 @@ stemming
 
 after
 
-![Word Cloud](/images/wordcloud.png){: .center-image}
+![Word Cloud](/images/wordcloud2.png){: .center-image}
 
 removed genres with low samples under 3000
 
