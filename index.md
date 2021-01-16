@@ -50,7 +50,7 @@ not all models are suited for multilabel
 
 did some tests to see how they compare
 
-### Prediction Distributions Comparisons
+### Methods
 ![Word Cloud](/images/logisticreg.png){: .center-image_b}
 
 logreg had an okay distribution when comparing the number of predicted genres compared to the real values. 
@@ -66,6 +66,12 @@ binaryrelevance had a really wierd way of predicting as it chose too many genres
 when looking at how many genres per label, this one was guessing up to 12 (all genres available) genres per movie
 
 compare to the other label lengths
+
+I also tested Topic Modelling with 10 topics and LDA?
+
+gave a poor result which you will see below
+
+did not check the genre distribution as the score was unappealing
 
 
 ### Scores
@@ -84,14 +90,19 @@ The prediction for a movie is represented by an array of scores between 0-1 for 
 
 Many movies ended up with no predicted genres at all. So I tried to get these movies to have at least one genre to make it not feel unrepresented in the genre community... A simple way of doing this was to just change the greatest value in the array to one. This resulted in the score of ???? which is a decent amount with little effort.
 
+## Conclusion
+
+Not the best result
+
+the plots only consist of 1-2 sentences which might be too little for a precise result.
+
+Many genres might overlap, atleast for me they do, drama to me is just the genre of when there is no good genre to describe the movie...
+
+might be another method that im unaware of.
+
+Happy with the result
 
 
-
-
-
-###Which one was best?
-
-Logreg was best, labelpower 
 
 
 
