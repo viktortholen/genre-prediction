@@ -1,3 +1,6 @@
+![movies]({{site.baseurl}}/https://static.insiderenvy.com/images/2020/01/04085835/JankyMoviesCollageResized.jpg)
+
+
 This article is about how to predict genres based on the plot description of movies. By using multi-label classification methods in Machine Learning, we can create several different models that does this for us!
 
 Firstly, we need a dataset! The dataset that I will use can be found at [this link](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset) which is an extensive collection of movies from IMDb. We will use the title, plot and genre parameters from the "IMDb movies.csv" file. There are in total 83740 movies in this dataset.
