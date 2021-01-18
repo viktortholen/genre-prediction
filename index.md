@@ -10,7 +10,7 @@ Since movies can have multiple genres, like for instance [Drama, Comedy] the cla
 
 ## Preprocessing
 
-In order to be able to use the dataset, we need to structure the dataset into a managable datastructure and clean up its content. The first thing that can be done is to remove empty/null rows in the dataset. Then we can start cleaning the plot description. Before any preprocessing we see in the wordcloud below, which represents the most frequent words in the text, that the words that are not related to movies at all. 
+In order to be able to use the dataset, we need to structure the dataset into a managable datastructure and clean up its content. The first thing that can be done is to remove empty/null rows in the dataset. Then we can start cleaning the plot description. Before any preprocessing we see in the wordcloud below, which represents the most frequent words in the text by the size of the word, that the words are not related to movies at all. 
 
 ![Word Cloud](/images/wordcloud_without_pre.png){: .center-image}
 
