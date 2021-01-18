@@ -14,23 +14,19 @@ In order to be able to use the dataset, we need to structure the dataset into a 
 
 ![Word Cloud](/images/wordcloud_without_pre.png){: .center-image}
 
-Here, there are several methods that can be used, first off is the removal of stopwords. The stopwords are words like "it" and "the" etc. The most essential stopwords can be taken from the NLTK library but this set can be complemented with other words that are deemed necessary. 
+Here, there are several methods that can be used, first off is the removal of stopwords. The stopwords are words like "it" and "the" etc. The most essential stopwords can be taken from the Natural Language Toolkit(NLTK) library which can be complemented with other words that are deemed necessary. 
 
 This is followed by transforming all text to lower-case and removing everything that isn't a letter in the alphabet.
 ---show image of code---
 
-The next step is to apply stemming to the text. 
+The next step is to apply stemming to the text. Stemming is the process of reducing words to their word stem, i.e the most basic form of the word. If the word is "running" then it will be reduced to "run" for example. There are different ways to do stemming, this time we'll use the SnowballStemmer from NLTK.
+
+This resulted in the wordcloud below which gives a better representation of movies than the one before. 
+
+![Word Cloud2](/images/wordcloud2.png){: .center-image}
 
 
-after
-
-![Word Cloud](/images/wordcloud2.png){: .center-image}
-
-removed genres with low samples under 3000
-
-somewhat scewed data as some genres are represented more
-
-the distribution looks like:
+The whole dataset contains 25 genres which is quite a lot. The representation of each genre for all movies is very different where some genres only appear a couple of times, compared to "Drama" which was represented 46127 times. Thus, I removed all genres that was represented less than 3000 times. This left us 12 different genres which should be more than enough. The final distribution of movies is shown in the diagram below.
 
 ![Word Cloud](/images/genres_graph.png){: .center-image_b}
 
