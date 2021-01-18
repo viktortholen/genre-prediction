@@ -10,24 +10,16 @@ Since movies can have multiple genres, like for instance [Drama, Comedy] the cla
 
 ## Preprocessing
 
-In order to be able to use the dataset, we need to structure the dataset into a managable datastructure and clean up its content. We start by cleaning the plot description. Before any preprocessing we see in the wordcloud below, which represents the most frequent words in the text, that the words that are not related to movies at all. 
+In order to be able to use the dataset, we need to structure the dataset into a managable datastructure and clean up its content. The first thing that can be done is to remove empty/null rows in the dataset. Then we can start cleaning the plot description. Before any preprocessing we see in the wordcloud below, which represents the most frequent words in the text, that the words that are not related to movies at all. 
 
 ![Word Cloud](/images/wordcloud_without_pre.png){: .center-image}
 
 Here, there are several methods that can be used, first off is the removal of stopwords. The stopwords are words like "it" and "the" etc. The most essential stopwords can be taken from the NLTK library but this set can be complemented with other words that are deemed necessary. 
 
+This is followed by transforming all text to lower-case and removing everything that isn't a letter in the alphabet.
+---show image of code---
 
-stopwords
-
-tolower
-
-remove everything that isnt characters between a-z
-
-stemming
-
-null values
-
-empty values
+The next step is to apply stemming to the text. 
 
 
 after
