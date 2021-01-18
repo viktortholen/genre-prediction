@@ -1,4 +1,4 @@
-![Word Cloud](/images/movies.jpg){: .center-image_b}
+![Movies](/images/movies.jpg){: .center-image_b}
 
 
 This article is about how to predict genres based on the plot description of movies. By using multi-label classification methods in Machine Learning, we can create several different models that does this for us!
