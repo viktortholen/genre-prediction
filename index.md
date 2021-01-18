@@ -1,21 +1,21 @@
 ![Movies](/images/movies.jpg){: .center-image_b}
 
 
-This article is about how to predict genres based on the plot description of movies. By using multi-label classification methods in Machine Learning, we can create several different models that does this for us!
+This article is about how to predict genres based on the plot description of movies with Python. By using multi-label classification methods in Machine Learning, we can create several different models that does this for us!
 
 Firstly, we need a dataset! The dataset that I will use can be found at [this link](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset) which is an extensive collection of movies from IMDb. We will use the title, plot and genre parameters from the "IMDb movies.csv" file. There are in total 83740 movies in this dataset.
 
-Since movies can have multiple genres, like for instance [Drama, Comedy] the classification will be a multi-label problem where multiple labels may be assigned to each instance. This is not a multi-class problem though as the classes are not mutually exclusive.
-
+Since movies can have multiple genres, like for instance [Drama, Comedy] the classification will be a multi-label problem where multiple labels may be assigned to each instance. This is not a multi-class problem though as the classes are not mutually exclusive. A good way to describe the difference between them is that multi-class classification makes the assumption that each sample is assigned to one and only one label: a fruit can be either an apple or a pear but not both at the same time. While in multi-label classification, the fruit can be both an apple and a pear, or none of them. In the context of movie genres, the latter makes more sense.
 
 
 ## Preprocessing
 
-Removing things from the plot description!
-
-before
+In order to be able to use the dataset, we need to structure the dataset into a managable datastructure and clean up its content. We start by cleaning the plot description. Before any preprocessing we see in the wordcloud below, which represents the most frequent words in the text, that the words that are not related to movies at all. 
 
 ![Word Cloud](/images/wordcloud_without_pre.png){: .center-image}
+
+Here, there are several methods that can be used, first off is the removal of stopwords. The stopwords are words like "it" and "the" etc. The most essential stopwords can be taken from the NLTK library but this set can be complemented with other words that are deemed necessary. 
+
 
 stopwords
 
