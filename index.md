@@ -1,13 +1,8 @@
+This article is about how to predict genres based on the plot description of movies. By using multi-label classification methods in Machine Learning, we can create several different models that does this for us!
 
-about the dataset
+Firstly, we need a dataset! The dataset that I will use can be found at [this link](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset) which is an extensive collection of movies from IMDb. We will use the title, plot and genre parameters from the "IMDb movies.csv" file. There are in total 83740 movies in this dataset.
 
-Multi-label classification techniques.
-
-transform to binary with multilabelbinarizer
-
-split data to train and test
-
-pipeline
+Since movies can have multiple genres, like for instance [Drama, Comedy] the classification will be a multi-label problem where multiple labels may be assigned to each instance. This is not a multi-class problem though as the classes are not mutually exclusive.
 
 
 
@@ -46,6 +41,16 @@ the distribution looks like:
 
 ## Deciding what model to use!
 
+transform to binary with multilabelbinarizer
+
+split data to train and test
+
+tf-idf
+
+pipeline
+
+fit
+
 There are many models to choose from
 
 not all models are suited for multilabel
@@ -55,7 +60,7 @@ did some tests to see how they compare
 ### Methods
 ![Word Cloud](/images/logisticreg.png){: .center-image_b}
 
-logreg had an okay distribution when comparing the number of predicted genres compared to the real values. 
+OneVsRest had an okay distribution when comparing the number of predicted genres compared to the real values. 
 
 ![Word Cloud](/images/LabelPower.png){: .center-image_b}
 
