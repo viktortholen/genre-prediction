@@ -1,8 +1,7 @@
-## Hello world!
 
 about the dataset
 
-multilabel prediction
+Multi-label classification techniques.
 
 transform to binary with multilabelbinarizer
 
@@ -12,9 +11,9 @@ pipeline
 
 
 
-## Removing things from the plot description!
+## Preprocessing
 
-preprocessing
+Removing things from the plot description!
 
 before
 
@@ -28,6 +27,9 @@ remove everything that isnt characters between a-z
 
 stemming
 
+null values
+
+empty values
 
 
 after
@@ -75,7 +77,7 @@ did not check the genre distribution as the score was unappealing
 
 
 ### Scores
-![Word Cloud](/images/scores.png){: .center-image_b} 
+![Word Cloud](/images/scores2.png){: .center-image_b} 
 
 need new graph with old score
 
@@ -101,9 +103,3 @@ Many genres might overlap, atleast for me they do, drama to me is just the genre
 might be another method that im unaware of.
 
 Happy with the result
-
-
-
-
-
-
