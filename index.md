@@ -70,16 +70,17 @@ Finally, we get the scores for the different models.
 ![Word Cloud2](/images/scoreprint.png){: .center-image}
 
 ![Word Cloud](/images/scores3.png){: .center-image_b} 
-need new graph with old scores?
-
-The scores were in favor of OnevsRest and LabelPower as they had almost identical results, however, LabelPower was really slow compared to OnevsRest so I continued with improving that instead.
 
 
-## Improving the scores even further
+The scores were in favor of OnevsRest and close second LabelPower. LabelPower had a slightly higher accuracy score while OnevsRest got a higher F1-score but LabelPower was really slow compared to OnevsRest.
+
+
+## Improving the score even further
+I continued with trying to improve the score of OnevsRest which got the F1-score: 53.14 and Accuracy score: 20.6. 
 
 The prediction for a movie is represented by an array of scores between 0-1 for all the 12 genres. 1 represent a genre that true and 0 false. The threshold I chose was 0.5 where scores above that value will be considered as 1 and under 0. 
 
-Many movies ended up with no predicted genres at all. So I tried to get these movies to have at least one genre each. A simple way of doing this was to just change the greatest value in the array to one. This resulted in the score of ???? which is a decent increase with little effort.
+Many movies ended up with no predicted genres at all. So I tried to get these movies to have at least one genre each. A simple way of doing this was to just change the greatest value in the array to one. This resulted in the F1-score of 55.3 and Accuracy score of 22.6 which is a decent increase with little effort.
 
 ## Conclusion
 
