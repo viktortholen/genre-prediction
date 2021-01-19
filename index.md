@@ -16,7 +16,7 @@ In order to be able to use the dataset, we need to structure the dataset into a 
 Here, there are several methods that can be used, first off is the removal of stopwords. The stopwords are words like "it" and "the" etc. The most essential stopwords can be taken from the Natural Language Toolkit(NLTK) library which can be complemented with other words that are deemed necessary. 
 
 This is followed by transforming all text to lower-case and removing everything that isn't a letter in the alphabet.
-![Word Cloud2](/images/prepros.png){: .center-image}
+![Word Cloud2](/images/prepros.png){: .center-image_b}
 
 The next step is to apply stemming to the text. Stemming is the process of reducing words to their word stem, i.e the most basic form of the word. If the word is "running" then it will be reduced to "run" for example. There are different ways to do stemming, this time we'll use the SnowballStemmer from NLTK.
 
@@ -38,9 +38,9 @@ Now we need to split our data into a train- and test set.
 
 
 These sets are converted to features with the TF-IDF technique, followed by the Machine Learning Model in the Pipeline.
-![Word Cloud2](/images/PipelineOnevsRest.png){: .center-image}
-![Word Cloud2](/images/PipelineLabelPower.png){: .center-image}
-![Word Cloud2](/images/PipelineBinRel.png){: .center-image}
+![Word Cloud2](/images/PipelineOnevsRest.png){: .center-image_b}
+![Word Cloud2](/images/PipelineLabelPower.png){: .center-image_b}
+![Word Cloud2](/images/PipelineBinRel.png){: .center-image_b}
 
 We fit the pipeline to the train data and predict the result with the test data.
 
@@ -67,7 +67,7 @@ I also tested Topic Modelling with 10 topics with the LDA. Since this resulted i
 
 ### Scores
 Finally, we get the scores for the different models.
-![Word Cloud2](/images/scoreprint.png){: .center-image}
+![Word Cloud2](/images/scoreprint.png){: .center-image_b}
 
 ![Word Cloud](/images/scores3.png){: .center-image_b} 
 
