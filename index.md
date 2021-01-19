@@ -32,7 +32,7 @@ The whole dataset contains 25 genres which is quite a lot. The representation of
 ## Deciding what model to use!
 At this point, the genres are structed as arrays of strings like [Drama, Comedy, Action] for each movie. These arrays need to be binarized! We can do that with the MultiLabelBinarizer which results in a binary 12x1 array instead.
 
-Now we need to split our data into a train- and test set.
+Now we split our data into a train- and test set.
 
 ![Word Cloud2](/images/test_train.png){: .center-image_b}
 
