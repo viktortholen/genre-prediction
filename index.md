@@ -69,7 +69,7 @@ I also tested Topic Modelling with 10 topics with the LDA. Since this resulted i
 Finally, we get the scores for the different models.
 ![Word Cloud2](/images/scoreprint.png){: .center-image}
 
-![Word Cloud](/images/scores2.png){: .center-image_b} 
+![Word Cloud](/images/scores3.png){: .center-image_b} 
 need new graph with old scores?
 
 The scores were in favor of OnevsRest and LabelPower as they had almost identical results, however, LabelPower was really slow compared to OnevsRest so I continued with improving that instead.
