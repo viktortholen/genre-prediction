@@ -7,10 +7,6 @@ Firstly, we need a dataset! The dataset that I will use can be found at [this li
 
 Since movies can have multiple genres, like for instance [Drama, Comedy] the classification will be a multi-label problem where multiple labels may be assigned to each instance. This is not a multi-class problem though as the classes are not mutually exclusive. A good way to describe the difference between them is that multi-class classification makes the assumption that each sample is assigned to one and only one label: a fruit can be either an apple or a pear but not both at the same time. While in multi-label classification, the fruit can be both an apple and a pear, or none of them. In the context of movie genres, the latter makes more sense.
 
-Before we start, let's import some libraries!
-
---libraries--
-
 ## Preprocessing
 
 In order to be able to use the dataset, we need to structure the dataset into a managable datastructure and clean up its content. The first thing that can be done is to remove empty/null rows in the dataset. Then we can start cleaning the plot description. Before any preprocessing we see in the wordcloud below, which represents the most frequent words in the text by the size of the word, that the words are not related to movies at all. 
@@ -20,7 +16,7 @@ In order to be able to use the dataset, we need to structure the dataset into a 
 Here, there are several methods that can be used, first off is the removal of stopwords. The stopwords are words like "it" and "the" etc. The most essential stopwords can be taken from the Natural Language Toolkit(NLTK) library which can be complemented with other words that are deemed necessary. 
 
 This is followed by transforming all text to lower-case and removing everything that isn't a letter in the alphabet.
----show image of code---
+![Word Cloud2](/images/prepros.png){: .center-image}
 
 The next step is to apply stemming to the text. Stemming is the process of reducing words to their word stem, i.e the most basic form of the word. If the word is "running" then it will be reduced to "run" for example. There are different ways to do stemming, this time we'll use the SnowballStemmer from NLTK.
 
@@ -38,10 +34,13 @@ At this point, the genres are structed as arrays of strings like [Drama, Comedy,
 
 Now we need to split our data into a train- and test set.
 
---train-test split--
+![Word Cloud2](/images/test_train.png){: .center-image}
+
 
 These sets are converted to features with the TF-IDF technique, followed by the Machine Learning Model in the Pipeline.
---pipeline--
+![Word Cloud2](/images/PipelineOnevsRest.png){: .center-image}
+![Word Cloud2](/images/PipelineLabelPower.png){: .center-image}
+![Word Cloud2](/images/PipelineBinRel.png){: .center-image}
 
 We fit the pipeline to the train data and predict the result with the test data.
 
@@ -67,7 +66,8 @@ When looking at how many genres that were predicted per movie, this one was gues
 I also tested Topic Modelling with 10 topics with the LDA. Since this resulted in a relative poor result, I did not continue with that method though.
 
 ### Scores
-Finally, the scores for the different methods were accordingly.
+Finally, we get the scores for the different models.
+![Word Cloud2](/images/scoreprint.png){: .center-image}
 
 ![Word Cloud](/images/scores2.png){: .center-image_b} 
 need new graph with old scores?
