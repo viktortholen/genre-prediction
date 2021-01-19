@@ -7,6 +7,9 @@ Firstly, we need a dataset! The dataset that I will use can be found at [this li
 
 Since movies can have multiple genres, like for instance [Drama, Comedy] the classification will be a multi-label problem where multiple labels may be assigned to each instance. This is not a multi-class problem though as the classes are not mutually exclusive. A good way to describe the difference between them is that multi-class classification makes the assumption that each sample is assigned to one and only one label: a fruit can be either an apple or a pear but not both at the same time. While in multi-label classification, the fruit can be both an apple and a pear, or none of them. In the context of movie genres, the latter makes more sense.
 
+Before we start, let's import some libraries!
+
+--libraries--
 
 ## Preprocessing
 
@@ -31,62 +34,52 @@ The whole dataset contains 25 genres which is quite a lot. The representation of
 ![Word Cloud](/images/genres_graph.png){: .center-image_b}
 
 ## Deciding what model to use!
+At this point, the genres are structed as arrays of strings like [Drama, Comedy, Action] for each movie. These arrays need to be binarized! We can do that with the MultiLabelBinarizer which results in a binary 12x1 array instead.
 
-transform to binary with multilabelbinarizer
+Now we need to split our data into a train- and test set.
 
-split data to train and test
+--train-test split--
 
-tf-idf
+These sets are converted to features with the TF-IDF technique, followed by the Machine Learning Model in the Pipeline.
+--pipeline--
 
-pipeline
+We fit the pipeline to the train data and predict the result with the test data.
 
-fit
+Not all models may be suited for this multi-label classification problem. I tested OneVsRest, LabelPower, BinaryRelevance and Topic Modeling. I used GridSearchCV to optimize the parameters for each of them before comparing them.
 
-There are many models to choose from
+### Models
+I thought it would be interesting to see how many times each genre is predicted compared to the actual data before looking at the score.
 
-not all models are suited for multilabel
-
-did some tests to see how they compare
-
-### Methods
 ![Word Cloud](/images/logisticreg.png){: .center-image_b}
 
-OneVsRest had an okay distribution when comparing the number of predicted genres compared to the real values. 
+OneVsRest had an okay distribution when comparing the number of predicted genres compared to the real values.
 
 ![Word Cloud](/images/LabelPower.png){: .center-image_b}
 
-labelpower was worse at predicting small sample genres but was pretty similar to logreg
+Labelpower was worse at predicting small sample genres but was pretty similar to OneVsRest otherwise.
 
 ![Word Cloud](/images/BinaryRel.png){: .center-image_b}
 
-binaryrelevance had a really wierd way of predicting as it chose too many genres
+BinaryRelevance had a really wierd way of predicting as it chose too many genres overall.
 
-when looking at how many genres per label, this one was guessing up to 12 (all genres available) genres per movie
+When looking at how many genres that were predicted per movie, this one was guessing up to 12 (all genres available) genres per movie compared to the actual 1-4 genres. The OneVsRest classifier was the most accurate here.
 
-compare to the other label lengths
-
-I also tested Topic Modelling with 10 topics and LDA?
-
-gave a poor result which you will see below
-
-did not check the genre distribution as the score was unappealing
-
+I also tested Topic Modelling with 10 topics with the LDA. Since this resulted in a relative poor result, I did not continue with that method though.
 
 ### Scores
+Finally, the scores for the different methods were accordingly.
+
 ![Word Cloud](/images/scores2.png){: .center-image_b} 
+need new graph with old scores?
 
-need new graph with old score
-
-Using the gridsearch for all of the methods finally resulted in the scores in the graph above.
-
-The scores were in favor of logreg and labelpower as they had almost identical results, however, labelpower was really slow compared to logreg so I continued with improving logreg
+The scores were in favor of OnevsRest and LabelPower as they had almost identical results, however, LabelPower was really slow compared to OnevsRest so I continued with improving that instead.
 
 
 ## Improving the scores even further
 
 The prediction for a movie is represented by an array of scores between 0-1 for all the 12 genres. 1 represent a genre that true and 0 false. The threshold I chose was 0.5 where scores above that value will be considered as 1 and under 0. 
 
-Many movies ended up with no predicted genres at all. So I tried to get these movies to have at least one genre to make it not feel unrepresented in the genre community... A simple way of doing this was to just change the greatest value in the array to one. This resulted in the score of ???? which is a decent amount with little effort.
+Many movies ended up with no predicted genres at all. So I tried to get these movies to have at least one genre each. A simple way of doing this was to just change the greatest value in the array to one. This resulted in the score of ???? which is a decent increase with little effort.
 
 ## Conclusion
 
