@@ -34,7 +34,7 @@ At this point, the genres are structed as arrays of strings like [Drama, Comedy,
 
 Now we need to split our data into a train- and test set.
 
-![Word Cloud2](/images/test_train.png){: .center-image}
+![Word Cloud2](/images/test_train.png){: .center-image_b}
 
 
 These sets are converted to features with the TF-IDF technique, followed by the Machine Learning Model in the Pipeline.
