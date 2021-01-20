@@ -37,14 +37,17 @@ Now we split our data into a train- and test set.
 ![Word Cloud2](/images/test_train.png){: .center-image_b}
 
 
-These sets are converted to features with the TF-IDF technique, followed by the Machine Learning Model in the Pipeline.
+These sets are converted to features with the TF-IDF technique, followed by the Machine Learning Model in the Pipeline. Not all models may be suited for this multi-label classification problem. I tested OneVsRest and LabelPowerset with LogisticRegression, BinaryRelevance with Gaussian Naive Bayes and Topic Modeling. I used GridSearchCV to optimize the parameters for each of them before comparing them.
 ![Word Cloud2](/images/PipelineOnevsRest.png){: .center-image_b}
 ![Word Cloud2](/images/PipelineLabelPower.png){: .center-image_b}
 ![Word Cloud2](/images/PipelineBinRel.png){: .center-image_b}
 
-We fit the pipeline to the train data and predict the result with the test data.
+Topic Modeling is done a little differently.
+![Word Cloud2](/images/topic.png){: .center-image_b}
 
-Not all models may be suited for this multi-label classification problem. I tested OneVsRest, LabelPower, BinaryRelevance and Topic Modeling. I used GridSearchCV to optimize the parameters for each of them before comparing them.
+We fit the pipeline to the train data and predict the result with the test data for all models.
+
+
 
 ### Models
 I thought it would be interesting to see how many times each genre is predicted compared to the actual data before looking at the score.
@@ -84,12 +87,6 @@ Many movies ended up with no predicted genres at all. So I tried to get these mo
 
 ## Conclusion
 
-Not the best result
+OneVsRest with LogisticRegression provided the best score when predicting movie genres from the plot. A possible reason for the relative low score could be that the plots only consist of 1-2 sentences which might be too short for a precise result.
 
-the plots only consist of 1-2 sentences which might be too little for a precise result.
-
-Many genres might overlap, atleast for me they do, drama to me is just the genre of when there is no good genre to describe the movie...
-
-might be another method that im unaware of.
-
-Happy with the result
+Although I tried Topic Modeling here, I believe that it could be useful for this kind of problem. There might be another method that i'm unaware of that provides a better score and the method can definitly be improved further. It would be interesting to combine genres into subgenres although this might create too many genres. Another field that can be explored is neural networks and deep learning techniques.
