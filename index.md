@@ -1,7 +1,7 @@
 ![Movies](/images/movies.jpg){: .center-image_b}
 
 
-This article is about how to predict genres based on the plot description of movies with Python. By using multi-label classification methods in Machine Learning, we can create several different models that does this for us!
+This article is about how to predict genres based on the plot description of movies with Python. I will be using multi-label classification methods in Machine Learning to solve this problem.
 
 Firstly, we need a dataset! The dataset that I will use can be found at [this link](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset) which is an extensive collection of movies from IMDb. We will use the title, plot and genre parameters from the "IMDb movies.csv" file. There are in total 83740 movies in this dataset.
 
@@ -87,6 +87,6 @@ Many movies ended up with no predicted genres at all. So I tried to get these mo
 
 ## Conclusion
 
-OneVsRest with LogisticRegression provided the best score when predicting movie genres from the plot. A possible reason for the relative low score could be that the plots only consist of 1-2 sentences which might be too short for a precise result.
+OneVsRest with LogisticRegression provided the best score. So it is possible to predict movie genres from the plot with Machine Learning, although it doesn't work every time. A possible reason for the relative low score could be that the plots only consist of 1-2 sentences which might be too short for a precise result.
 
 Although I tried Topic Modeling here, I believe that it could be useful for this kind of problem. There might be another method that i'm unaware of that provides a better score and the method can definitly be improved further. It would be interesting to combine genres into subgenres although this might create too many genres. Another field that can be explored is neural networks and deep learning techniques.
